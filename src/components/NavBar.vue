@@ -7,12 +7,7 @@
       <router-link to="/" class="nav-btn">Home</router-link>
       <template v-if="isLoggedIn">
         <router-link to="/profile" class="avatar-link">
-          <img
-            src="https://i.pravatar.cc/40"
-            alt="avatar"
-            class="avatar"
-            title="Profile"
-          />
+          <span class="avatar-emoji" title="Profile" aria-label="Profile">👤</span>
         </router-link>
         <button @click="logout" class="nav-btn logout-btn">Logout</button>
       </template>
@@ -104,17 +99,24 @@ export default {
   align-items: center;
   margin-left: 0.5em;
 }
-.avatar {
+.avatar-emoji {
+  font-size: 2.2em;
+  margin-left: 1em;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  transition: box-shadow 0.2s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  margin-left: 1em;
-  object-fit: cover;
+  background: #fff;
   border: 2px solid #fff;
-  cursor: pointer;
-  transition: box-shadow 0.2s;
 }
-.avatar:hover {
+.avatar-emoji:hover {
   box-shadow: 0 0 0 3px #b8d8ba;
+  background: #f9f9f9;
 }
 </style>
