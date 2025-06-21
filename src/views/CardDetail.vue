@@ -102,16 +102,14 @@ export default {
     showBuy() {
       return (
         this.user &&
-        !this.user.bought.some(c => c._id === this.card._id) &&
-        !this.user.sold.some(c => c._id === this.card._id)
+        !this.user.bought.some(c => c._id === this.card._id)
       );
     },
     showWishlist() {
       return (
         this.user &&
         !this.user.wishlist.some(c => c._id === this.card._id) &&
-        !this.user.bought.some(c => c._id === this.card._id) &&
-        !this.user.sold.some(c => c._id === this.card._id)
+        !this.user.bought.some(c => c._id === this.card._id)
       );
     },
     showSell() {

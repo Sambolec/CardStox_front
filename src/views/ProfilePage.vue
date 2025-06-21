@@ -69,20 +69,6 @@
       </div>
       <div v-else class="no-cards">No bought cards</div>
     </div>
-    <div class="profile-section">
-      <h3>Sold Cards</h3>
-      <div v-if="user.sold.length" class="card-grid">
-        <div v-for="card in user.sold" :key="card._id" class="card-item sold">
-          <img :src="card.image" :alt="card.name" class="card-img" />
-          <div class="card-info">
-            <h4>{{ card.name }}</h4>
-            <div>{{ card.game }}</div>
-            <div>€{{ card.price }}</div>
-          </div>
-        </div>
-      </div>
-      <div v-else class="no-cards">No sold cards</div>
-    </div>
   </div>
   <div v-else class="profile-loading">Loading profile...</div>
 </template>
@@ -232,10 +218,6 @@ export default {
 .card-item.clickable:hover {
   background: #e9f7f1;
   transform: scale(1.05);
-}
-.card-item.sold {
-  opacity: 0.7;
-  background: #f6e2e2;
 }
 .card-img {
   width: 100%;
